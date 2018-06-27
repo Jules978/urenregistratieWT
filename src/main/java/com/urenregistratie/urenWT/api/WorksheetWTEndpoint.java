@@ -1,7 +1,7 @@
 package com.urenregistratie.urenWT.api;
 
-import com.urenregistratie.urenWT.controller.UserService;
-import com.urenregistratie.urenWT.domain.User;
+import com.urenregistratie.urenWT.controller.WorksheetService;
+import com.urenregistratie.urenWT.domain.Worksheet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,16 +11,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("user")
+@Path("worksheet")
 @Component
-public class UserEndpoint {
+public class WorksheetWTEndpoint {
     @Autowired
-    UserService userService;
+    WorksheetService worksheetWTService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response showAll() {
-        Iterable<User> users = userService.giveAll();
-        return Response.ok(users).build();
+        Iterable<Worksheet> worksheets = worksheetWTService.giveAll();
+        return Response.ok(worksheets).build();
     }
 }

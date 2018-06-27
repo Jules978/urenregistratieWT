@@ -1,18 +1,18 @@
 package com.urenregistratie.urenWT.controller;
 
-import com.urenregistratie.urenWT.domain.User;
+import com.urenregistratie.urenWT.domain.Hour;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class UserService {
+public class HourService {
 	
 	@Autowired
-	UserRepository userRepository;
+	HourRepository hourRepository;
 	
-	public Iterable<User> giveAll (){
-		return userRepository.findAll();
+	public Iterable<Hour> giveAll (){
+		return hourRepository.findAll();
 	}
 }

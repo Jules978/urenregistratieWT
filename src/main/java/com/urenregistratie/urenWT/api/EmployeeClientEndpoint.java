@@ -1,7 +1,7 @@
 package com.urenregistratie.urenWT.api;
 
-import com.urenregistratie.urenWT.controller.UserService;
-import com.urenregistratie.urenWT.domain.User;
+import com.urenregistratie.urenWT.controller.EmployeeClientService;
+import com.urenregistratie.urenWT.domain.EmployeeClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,16 +11,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("user")
+@Path("/user/employee_client")
 @Component
-public class UserEndpoint {
+public class EmployeeClientEndpoint {
     @Autowired
-    UserService userService;
+    EmployeeClientService employeeClientService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response showAll() {
-        Iterable<User> users = userService.giveAll();
-        return Response.ok(users).build();
+        Iterable<EmployeeClient> employeeClients = employeeClientService.giveAll();
+        return Response.ok(employeeClients).build();
     }
 }
