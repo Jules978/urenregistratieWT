@@ -16,7 +16,7 @@ public class Company {
     @NotNull
     private String adres;
     @NotNull
-    private String emailAdres;
+    private String emailAdress;
     @NotNull
     private String telephoneNumber;
     @NotNull
@@ -47,11 +47,11 @@ public class Company {
     }
 
     public String getEmailAdres() {
-        return emailAdres;
+        return emailAdress;
     }
 
-    public void setEmailAdres(String emailAdres) {
-        this.emailAdres = emailAdres;
+    public void setEmailAdres(String emailAdress) {
+        this.emailAdress = emailAdress;
     }
 
     public String getTelephoneNumber() {
