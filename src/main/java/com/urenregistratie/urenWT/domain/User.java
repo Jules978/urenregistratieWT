@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+
 @Entity
 @Table(name = "User")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -18,7 +19,7 @@ public class User {
     @NotNull
     private String lastName;
     @NotNull
-    private String emailAdres;
+    private String emailAdress;
     @NotNull
     private int permissionLevel;
     @NotNull
@@ -56,12 +57,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getemailAdres() {
-        return emailAdres;
+    public String getemailAdress() {
+        return emailAdress;
     }
 
-    public void setemailAdres(String emailAdres) {
-        this.emailAdres = emailAdres;
+    public void setemailAdress(String emailAdress) {
+        this.emailAdress = emailAdress;
     }
 
     public int getPermissionLevel() {
