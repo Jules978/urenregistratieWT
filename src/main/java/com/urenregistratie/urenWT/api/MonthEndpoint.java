@@ -1,7 +1,7 @@
 package com.urenregistratie.urenWT.api;
 
-import com.urenregistratie.urenWT.controller.UserService;
-import com.urenregistratie.urenWT.domain.User;
+import com.urenregistratie.urenWT.controller.MonthService;
+import com.urenregistratie.urenWT.domain.Month;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,16 +11,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("user")
+@Path("month")
 @Component
-public class UserEndpoint {
+public class MonthEndpoint {
     @Autowired
-    UserService userService;
+    MonthService monthService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response showAll() {
-        Iterable<User> users = userService.giveAll();
-        return Response.ok(users).build();
+        Iterable<Month> months = monthService.giveAll();
+        return Response.ok(months).build();
     }
 }
