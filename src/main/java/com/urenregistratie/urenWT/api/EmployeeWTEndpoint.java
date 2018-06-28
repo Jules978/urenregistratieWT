@@ -41,7 +41,7 @@ public class EmployeeWTEndpoint {
     public Response postEmployee(EmployeeWT employee){
         if(employee != null){
             EmployeeWT result = this.employeeWTService.save(employee);
-            return Response.accepted(result.getID()).build();
+            return Response.accepted(result.getUserID()).build();
         }
         System.out.println("EmployeeWT in POST is null!");
         return Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -57,11 +57,11 @@ public class EmployeeWTEndpoint {
 
             empEdit.setFirstName(employeeEdit.getFirstName());
             empEdit.setLastName(employeeEdit.getLastName());
-            empEdit.setemailAdress(employeeEdit.getemailAdress());
+            empEdit.setEmailAdress(employeeEdit.getEmailAdress());
             empEdit.setTelephoneNumber(employeeEdit.getTelephoneNumber());
 
             EmployeeWT result = this.employeeWTService.save(empEdit);
-            return Response.accepted(result.getID()).build();
+            return Response.accepted(result.getUserID()).build();
         }
         System.out.println("EmployeeWT id in PUT not found!");
         return Response.status(Status.NOT_FOUND).build();

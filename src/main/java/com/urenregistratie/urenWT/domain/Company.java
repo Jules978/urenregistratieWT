@@ -9,25 +9,31 @@ public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Long ID;
+    @Column(name = "companyID", updatable = false, nullable = false)
+    private long companyID;
     @NotNull
     private String companyName;
     @NotNull
-    private String adres;
+    private String addressLine1;
     @NotNull
-    private String emailAdress;
+    private String addressLine2;
+    @NotNull
+    private String zipCode;
+    @NotNull
+    private String city;
+    @NotNull
+    private String emailAddress;
     @NotNull
     private String telephoneNumber;
     @NotNull
-    private double Salary;
+    private double salary;
 
-    public Long getID() {
-        return ID;
+    public long getCompanyID() {
+        return companyID;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public void setCompanyID(long companyID) {
+        this.companyID = companyID;
     }
 
     public String getCompanyName() {
@@ -38,20 +44,44 @@ public class Company {
         this.companyName = companyName;
     }
 
-    public String getAdres() {
-        return adres;
+    public String getAdresLine1() {
+        return addressLine1;
     }
 
-    public void setAdres(String adres) {
-        this.adres = adres;
+    public void setAdresLine1(String adresLine1) {
+        this.addressLine1 = adresLine1;
     }
 
-    public String getEmailAdres() {
-        return emailAdress;
+    public String getAdresLine2() {
+        return addressLine2;
     }
 
-    public void setEmailAdres(String emailAdress) {
-        this.emailAdress = emailAdress;
+    public void setAdresLine2(String adresLine2) {
+        this.addressLine2 = adresLine2;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getEmailAdress() {
+        return emailAddress;
+    }
+
+    public void setEmailAdress(String emailAdress) {
+        this.emailAddress = emailAdress;
     }
 
     public String getTelephoneNumber() {
@@ -63,10 +93,10 @@ public class Company {
     }
 
     public double getSalary() {
-        return Salary;
+        return salary;
     }
 
     public void setSalary(double salary) {
-        Salary = salary;
+        this.salary = salary;
     }
 }

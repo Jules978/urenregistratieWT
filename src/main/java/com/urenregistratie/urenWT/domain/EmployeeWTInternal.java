@@ -4,7 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Admin")
-public class Admin extends User {
+@Table(name = "EmployeeWTInternal")
+public class EmployeeWTInternal extends EmployeeWT {
+
 
 }
