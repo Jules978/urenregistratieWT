@@ -20,7 +20,7 @@ public class WorkableDay{
     @NotNull
     private int hoursAvailible;
     @NotNull
-    private int hoursShortAbence;
+    private int hoursShortAbsence;
 
     public long getWorkableDayID() {
         return workableDayID;
@@ -62,11 +62,11 @@ public class WorkableDay{
         this.hoursAvailible = hoursAvailible;
     }
 
-    public int getHoursShortAbence() {
-        return hoursShortAbence;
+    public int getHoursShortAbsence() {
+        return hoursShortAbsence;
     }
 
-    public void setHoursShortAbence(int hoursShortAbence) {
-        this.hoursShortAbence = hoursShortAbence;
+    public void setHoursShortAbsence(int hoursShortAbsence) {
+        this.hoursShortAbsence = hoursShortAbsence;
     }
 }
