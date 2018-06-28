@@ -4,41 +4,41 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-
 @Entity
 @Table(name = "User")
 @Inheritance(strategy = InheritanceType.JOINED)
 
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Long ID;
+    @Column(name = "userID", updatable = false, nullable = false)
+    private long userID;
     @NotNull
     private String firstName;
     @NotNull
     private String lastName;
     @NotNull
-    private String emailAdress;
+    @Temporal(TemporalType.DATE)
+    private Date dateOfBirth;
+    @NotNull
+    private String emailAddress;
+    @NotNull
+    private String telephoneNumber;
     @NotNull
     private int permissionLevel;
     @NotNull
     private String password;
     @NotNull
-    private String telephoneNumber;
-    @NotNull
-    @Temporal(TemporalType.DATE)
-    private Date dateOfBirth;
-    @NotNull
     @Temporal(TemporalType.DATE)
     private Date registerDate;
 
-    public Long getID() {
-        return ID;
+    public long getUserID() {
+        return userID;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public void setUserID(long userID) {
+        this.userID = userID;
     }
 
     public String getFirstName() {
@@ -57,12 +57,28 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getemailAdress() {
-        return emailAdress;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setemailAdress(String emailAdress) {
-        this.emailAdress = emailAdress;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getEmailAdress() {
+        return emailAddress;
+    }
+
+    public void setEmailAdress(String emailAdress) {
+        this.emailAddress = emailAdress;
+    }
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public void setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
     }
 
     public int getPermissionLevel() {
@@ -79,22 +95,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getTelephoneNumber() {
-        return telephoneNumber;
-    }
-
-    public void setTelephoneNumber(String telephoneNumber) {
-        this.telephoneNumber = telephoneNumber;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
     }
 
     public Date getRegisterDate() {
