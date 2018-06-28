@@ -57,7 +57,7 @@ public class EmployeeWTEndpoint {
 
             empEdit.setFirstName(employeeEdit.getFirstName());
             empEdit.setLastName(employeeEdit.getLastName());
-            empEdit.setEmailAdress(employeeEdit.getEmailAdress());
+            empEdit.setEmailAddress(employeeEdit.getEmailAddress());
             empEdit.setTelephoneNumber(employeeEdit.getTelephoneNumber());
 
             EmployeeWT result = this.employeeWTService.save(empEdit);
