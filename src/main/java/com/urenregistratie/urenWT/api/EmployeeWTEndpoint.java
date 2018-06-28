@@ -47,7 +47,7 @@ public class EmployeeWTEndpoint {
         return Response.status(Status.INTERNAL_SERVER_ERROR).build();
     }
 
-//    @PUT
+//  @PUT
     @POST
     @Path("{id}/edit")
     @Consumes(MediaType.APPLICATION_JSON)
