@@ -1,12 +1,16 @@
 package com.urenregistratie.urenWT.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "EmployeeClient")
-public class EmployeeClient extends User {
+@Table(name = "ManagerExternal")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class ManagerExternal extends User {
+
     @NotNull
     private int companyID;
 
@@ -17,4 +21,6 @@ public class EmployeeClient extends User {
     public void setCompanyID(int companyID) {
         this.companyID = companyID;
     }
+
+
 }

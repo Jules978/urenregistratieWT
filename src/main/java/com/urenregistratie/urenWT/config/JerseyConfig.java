@@ -11,17 +11,7 @@ import javax.ws.rs.ApplicationPath;
 @ApplicationPath("/api")
 public class JerseyConfig extends ResourceConfig {
 	public JerseyConfig(){
-		register(UserEndpoint.class);
-		register(AdminEndpoint.class);
-		register(CandidateEndpoint.class);
-		register(EmployeeClientEndpoint.class);
 		register(EmployeeWTEndpoint.class);
-		register(CompanyEndpoint.class);
-		register(WorksheetWTEndpoint.class);
-		register(ApprovalEndpoint.class);
-		register(HourEndpoint.class);
-		register(YearEndpoint.class);
-		register(DayEndpoint.class);
 
 	}
 }

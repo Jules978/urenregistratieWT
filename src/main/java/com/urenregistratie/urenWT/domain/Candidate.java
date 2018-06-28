@@ -6,13 +6,16 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Candidate")
-public class Candidate extends User {
+public class Candidate extends EmployeeWT {
 
+    @NotNull
     private double salary;
+    @NotNull
+    private enum approvalCandidate {FIRST_APPROVED, FINAL_APPROVED}
     @NotNull
     private int companyID;
     @NotNull
-    private int employingClientID;
+    private int managerExternalID;
 
     public double getSalary() {
         return salary;
@@ -30,11 +33,11 @@ public class Candidate extends User {
         this.companyID = companyID;
     }
 
-    public int getEmployingClientID() {
-        return employingClientID;
+    public int getManagerExternalID() {
+        return managerExternalID;
     }
 
-    public void setEmployingClientID(int employingClientID) {
-        this.employingClientID = employingClientID;
+    public void setManagerExternalID(int managerExternalID) {
+        this.managerExternalID = managerExternalID;
     }
 }
