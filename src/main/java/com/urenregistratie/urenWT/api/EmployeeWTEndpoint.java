@@ -47,11 +47,13 @@ public class EmployeeWTEndpoint {
         return Response.status(Status.INTERNAL_SERVER_ERROR).build();
     }
 
+//  @EDIT
+
 //  @PUT
     @POST
-    @Path("{id}/edit")
+    @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response editEmployee(@PathParam("id") Long id, EmployeeWT employeeEdit){
+    public Response updateEmployee(@PathParam("id") Long id, EmployeeWT employeeEdit){
         if(this.employeeWTService.existsById(id)) {
             EmployeeWT empEdit = this.employeeWTService.findById(id);
 
@@ -59,6 +61,12 @@ public class EmployeeWTEndpoint {
             empEdit.setLastName(employeeEdit.getLastName());
             empEdit.setEmailAddress(employeeEdit.getEmailAddress());
             empEdit.setTelephoneNumber(employeeEdit.getTelephoneNumber());
+            empEdit.setPassword(employeeEdit.getPassword());
+            empEdit.setDateOfBirth(employeeEdit.getDateOfBirth());
+            empEdit.setAddressLine1(employeeEdit.getAddressLine1());
+            empEdit.setAddressLine2(employeeEdit.getAddressLine2());
+            empEdit.setZipCode(employeeEdit.getZipCode());
+            empEdit.setCity(employeeEdit.getCity());
 
             EmployeeWT result = this.employeeWTService.save(empEdit);
             return Response.accepted(result.getUserID()).build();
