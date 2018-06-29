@@ -14,18 +14,19 @@ public class HourRegistration {
     @Column(name = "hourRegistrationID", updatable = false, nullable = false)
     private long hourRegistrationID;
     @NotNull
-    private int candidateID;
-    @NotNull
+    @ManyToOne
+    private Candidate candidate;
+    //@NotNull
     @Temporal(TemporalType.DATE)
     private Date startDate;
-    @NotNull
+    //@NotNull
     @Temporal(TemporalType.DATE)
     private Date endDate;
-    @NotNull
+    //@NotNull
     private ArrayList<Integer> hoursList = new ArrayList();
-    @NotNull
+    //@NotNull
     private String commentAdminWT;
-    @NotNull
+    //@NotNull
     private String commentManagerExternal;
 
     public long getHourRegistrationID() {
@@ -36,12 +37,12 @@ public class HourRegistration {
         this.hourRegistrationID = hourRegistrationID;
     }
 
-    public int getCandidateID() {
-        return candidateID;
+    public Candidate getCandidate() {
+        return candidate;
     }
 
-    public void setCandidateID(int candidateID) {
-        this.candidateID = candidateID;
+    public void setCandidate(Candidate candidate) {
+        this.candidate = candidate;
     }
 
     public Date getStartDate() {

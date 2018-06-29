@@ -1,6 +1,7 @@
 package com.urenregistratie.urenWT.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -8,14 +9,16 @@ import javax.validation.constraints.NotNull;
 @Table(name = "Candidate")
 public class Candidate extends EmployeeWT {
 
-    @NotNull
+    //@NotNull
     private double salary;
-    @NotNull
+    //@NotNull
     private enum approvalCandidate {FIRST_APPROVED, FINAL_APPROVED}
-    @NotNull
-    private int companyID;
-    @NotNull
-    private int managerExternalID;
+    //@NotNull
+    @ManyToOne
+    private Company company;
+    //@NotNull
+    @ManyToOne
+    private ManagerExternal managerExternal;
 
     public double getSalary() {
         return salary;
@@ -25,19 +28,19 @@ public class Candidate extends EmployeeWT {
         this.salary = salary;
     }
 
-    public int getCompanyID() {
-        return companyID;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCompanyID(int companyID) {
-        this.companyID = companyID;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
-    public int getManagerExternalID() {
-        return managerExternalID;
+    public ManagerExternal getManagerExternal() {
+        return managerExternal;
     }
 
-    public void setManagerExternalID(int managerExternalID) {
-        this.managerExternalID = managerExternalID;
+    public void setManagerExternal(ManagerExternal managerExternal) {
+        this.managerExternal = managerExternal;
     }
 }

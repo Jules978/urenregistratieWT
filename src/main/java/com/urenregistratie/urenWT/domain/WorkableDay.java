@@ -11,15 +11,15 @@ public class WorkableDay{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "workableDayID", updatable = false, nullable = false)
     private long workableDayID;
-    @NotNull
+    //@NotNull
     private boolean workableDay;
     @NotNull
     private int hoursWork;
-    @NotNull
+    //@NotNull
     private int hoursSick;
-    @NotNull
+    //@NotNull
     private int hoursAvailible;
-    @NotNull
+    //@NotNull
     private int hoursShortAbsence;
 
     public long getWorkableDayID() {
