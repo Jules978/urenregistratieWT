@@ -11,9 +11,9 @@ public class Approval {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "approvalID", updatable = false, nullable = false)
     private long approvalID;
-    @NotNull
+    //@NotNull
     private enum approvedByAdminWT {UNKNOWN, APPROVED, DISMISSED}
-    @NotNull
+    //@NotNull
     private enum approvedByManagerExternal {UNKNOWN, APPROVED, DISMISSED}
 
     public long getApprovalID() {

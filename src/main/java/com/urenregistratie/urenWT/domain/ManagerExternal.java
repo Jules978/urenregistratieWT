@@ -3,6 +3,7 @@ package com.urenregistratie.urenWT.domain;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -12,14 +13,15 @@ import javax.validation.constraints.NotNull;
 public class ManagerExternal extends User {
 
     @NotNull
-    private int companyID;
+    @ManyToOne
+    private Company company;
 
-    public int getCompanyID() {
-        return companyID;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCompanyID(int companyID) {
-        this.companyID = companyID;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
 

@@ -1,5 +1,7 @@
 package com.urenregistratie.urenWT.domain;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -11,23 +13,25 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "companyID", updatable = false, nullable = false)
     private long companyID;
-    @NotNull
+    //@NotNull
     private String companyName;
-    @NotNull
+    //@NotNull
     private String addressLine1;
-    @NotNull
+    //@NotNull
     private String addressLine2;
-    @NotNull
+    //@NotNull
     private String zipCode;
-    @NotNull
+    //@NotNull
     private String city;
-    @NotNull
+    //@NotNull
     private String emailAddress;
-    @NotNull
+    //@NotNull
     private String telephoneNumber;
-    @NotNull
+    //@NotNull
     private double salary;
-
+//    @OneToMany
+//    private List<Candidate> candidates;
+    
     public long getCompanyID() {
         return companyID;
     }

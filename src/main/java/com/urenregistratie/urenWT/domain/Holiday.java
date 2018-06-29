@@ -12,13 +12,13 @@ public class Holiday {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "holidayID", updatable = false, nullable = false)
     private long holidayID;
-    @NotNull
+    //@NotNull
     @Temporal(TemporalType.DATE)
     private Date startDate;
-    @NotNull
+    //@NotNull
     @Temporal(TemporalType.DATE)
     private Date endDate;
-    @NotNull
+    //@NotNull
     private int vacationHours;
 
     public long getHolidayID() {
