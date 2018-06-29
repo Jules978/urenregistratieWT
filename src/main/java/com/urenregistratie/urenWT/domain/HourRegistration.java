@@ -22,7 +22,7 @@ public class HourRegistration {
     @Temporal(TemporalType.DATE)
     private Date endDate;
     @NotNull
-    private ArrayList<Integer> hoursArraylist = new ArrayList();
+    private ArrayList<Integer> hoursList = new ArrayList();
     @NotNull
     private String commentAdminWT;
     @NotNull
@@ -60,12 +60,12 @@ public class HourRegistration {
         this.endDate = endDate;
     }
 
-    public ArrayList<Integer> getHoursArraylist() {
-        return hoursArraylist;
+    public ArrayList<Integer> getHoursList() {
+        return hoursList;
     }
 
-    public void setHoursArraylist(ArrayList<Integer> hoursArraylist) {
-        this.hoursArraylist = hoursArraylist;
+    public void setHoursList(ArrayList<Integer> hoursList) {
+        this.hoursList = hoursList;
     }
 
     public String getCommentAdminWT() {

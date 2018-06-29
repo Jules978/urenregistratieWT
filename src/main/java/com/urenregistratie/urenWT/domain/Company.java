@@ -44,20 +44,20 @@ public class Company {
         this.companyName = companyName;
     }
 
-    public String getAdresLine1() {
+    public String getAddressLine1() {
         return addressLine1;
     }
 
-    public void setAdresLine1(String adresLine1) {
-        this.addressLine1 = adresLine1;
+    public void setAddressLine1(String addressLine1) {
+        this.addressLine1 = addressLine1;
     }
 
-    public String getAdresLine2() {
+    public String getAddressLine2() {
         return addressLine2;
     }
 
-    public void setAdresLine2(String adresLine2) {
-        this.addressLine2 = adresLine2;
+    public void setAddressLine2(String addressLine2) {
+        this.addressLine2 = addressLine2;
     }
 
     public String getZipCode() {
@@ -76,12 +76,12 @@ public class Company {
         this.city = city;
     }
 
-    public String getEmailAdress() {
+    public String getEmailAddress() {
         return emailAddress;
     }
 
-    public void setEmailAdress(String emailAdress) {
-        this.emailAddress = emailAdress;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     public String getTelephoneNumber() {
