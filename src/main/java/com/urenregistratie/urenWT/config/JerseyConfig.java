@@ -12,8 +12,8 @@ import javax.ws.rs.ApplicationPath;
 public class JerseyConfig extends ResourceConfig {
 	public JerseyConfig(){
 		register(EmployeeWTEndpoint.class);
+		register(CandidateEndpoint.class);
 		register(ManagerExternalEndpoint.class);
-
 	}
 }
 
