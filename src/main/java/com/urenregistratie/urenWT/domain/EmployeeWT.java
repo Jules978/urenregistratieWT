@@ -11,12 +11,12 @@ import javax.validation.constraints.NotNull;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class EmployeeWT extends User {
 
-    @NotNull
+    //@NotNull
     private String addressLine1;
     private String addressLine2;
-    @NotNull
+    //@NotNull
     private String zipCode;
-    @NotNull
+    //@NotNull
     private String city;
 
     public String getAddressLine1() {

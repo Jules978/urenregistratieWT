@@ -14,22 +14,22 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userID", updatable = false, nullable = false)
     private long userID;
-    @NotNull
+    //@NotNull
     private String firstName;
-    @NotNull
+    //@NotNull
     private String lastName;
-    @NotNull
+    //@NotNull
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
-    @NotNull
+    //@NotNull
     private String emailAddress;
-    @NotNull
+    //@NotNull
     private String telephoneNumber;
-    @NotNull
+    //@NotNull
     private int permissionLevel;
-    @NotNull
+    //@NotNull
     private String password;
-    @NotNull
+    //@NotNull
     @Temporal(TemporalType.DATE)
     private Date registerDate;
 
