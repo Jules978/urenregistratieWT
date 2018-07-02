@@ -10,7 +10,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-@Path("/user/company")
+
+@Path("company")
 @Component
 public class CompanyEndpoint {
     @Autowired
@@ -54,7 +55,6 @@ public class CompanyEndpoint {
     public Response updateCompany(@PathParam("id") Long id, Company companyEdit){
         if(this.companyWTService.existsById(id)) {
             Company comEdit = this.companyWTService.findById(id);
-
             comEdit.setCompanyName(companyEdit.getCompanyName());
             comEdit.setAddressLine1(companyEdit.getAddressLine1());
             comEdit.setAddressLine2(companyEdit.getAddressLine2());

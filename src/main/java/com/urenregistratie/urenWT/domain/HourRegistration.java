@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "HourRegistration")
@@ -23,11 +24,11 @@ public class HourRegistration {
     @Temporal(TemporalType.DATE)
     private Date endDate;
     //@NotNull
-    private ArrayList<Integer> hoursList = new ArrayList();
-    //@NotNull
-    private String commentAdminWT;
-    //@NotNull
-    private String commentManagerExternal;
+    @OneToMany
+    private List<WorkableDay> hoursList = new ArrayList<>();
+    //private List<WorkableDay> hoursList = new List();
+    @OneToOne
+    private Approval approval;
 
     public long getHourRegistrationID() {
         return hourRegistrationID;
@@ -53,35 +54,34 @@ public class HourRegistration {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public void addDay(WorkableDay workableDay) {
+        this.hoursList.add(workableDay);
+        if (workableDay.getHourRegistration() != this) {
+        	workableDay.setHourRegistration(this);
+        }
+    }
+    
+    public List<WorkableDay> getHoursList() {
+		return hoursList;
+	}
+
+	public void setHoursList(ArrayList<WorkableDay> hoursList) {
+		this.hoursList = hoursList;
+	}
+
+	public Approval getApproval() {
+		return approval;
+	}
+
+	public void setApproval(Approval approval) {
+		this.approval = approval;
+	}
+
+	public Date getEndDate() {
         return endDate;
     }
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
-    }
-
-    public ArrayList<Integer> getHoursList() {
-        return hoursList;
-    }
-
-    public void setHoursList(ArrayList<Integer> hoursList) {
-        this.hoursList = hoursList;
-    }
-
-    public String getCommentAdminWT() {
-        return commentAdminWT;
-    }
-
-    public void setCommentAdminWT(String commentAdminWT) {
-        this.commentAdminWT = commentAdminWT;
-    }
-
-    public String getCommentManagerExternal() {
-        return commentManagerExternal;
-    }
-
-    public void setCommentManagerExternal(String commentManagerExternal) {
-        this.commentManagerExternal = commentManagerExternal;
     }
 }
