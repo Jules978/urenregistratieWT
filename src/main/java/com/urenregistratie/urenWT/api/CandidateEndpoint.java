@@ -19,8 +19,8 @@ public class CandidateEndpoint {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response showAll() {
-        Iterable<Candidate> candidate = this.candidateWTService.giveAll();
-        return Response.ok(candidate).build();
+        Iterable<Candidate> candidates = this.candidateWTService.giveAll();
+        return Response.ok(candidates).build();
     }
 
     @GET
@@ -62,6 +62,9 @@ public class CandidateEndpoint {
             canEdit.setTelephoneNumber(candidateEdit.getTelephoneNumber());
             canEdit.setPermissionLevel(candidateEdit.getPermissionLevel());
             canEdit.setPassword(candidateEdit.getPassword());
+            canEdit.setSalary(candidateEdit.getSalary());
+            canEdit.setCompany(candidateEdit.getCompany());
+            canEdit.setManagerExternal(candidateEdit.getManagerExternal());
 
             Candidate result = this.candidateWTService.save(canEdit);
             return Response.accepted(result.getUserID()).build();

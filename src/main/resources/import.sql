@@ -1,1 +1,0 @@
-INSERT INTO `user`( `date_of_birth`, `email_address`, `first_name`, `last_name`, `password`, `permission_level`, `register_date`, `telephone_number`) VALUES ('1975-04-28','joey@gmail.com','Joey', 'Hendriks','test', 1, '2017-06-29', '06-1234534')

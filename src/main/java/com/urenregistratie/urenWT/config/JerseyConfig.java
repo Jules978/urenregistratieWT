@@ -15,7 +15,6 @@ public class JerseyConfig extends ResourceConfig {
 		register(CompanyEndpoint.class);
 		register(CandidateEndpoint.class);
 		register(ManagerExternalEndpoint.class);
-		register(ManagerExternalEndpoint.class);
 	}
 }
 
