@@ -1,7 +1,11 @@
 package com.urenregistratie.urenWT.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -19,7 +23,9 @@ public class Candidate extends EmployeeWT {
     //@NotNull
     @ManyToOne
     private ManagerExternal managerExternal;
-
+    @OneToMany
+    private List<HourRegistration> hourLists = new ArrayList();
+    
     public double getSalary() {
         return salary;
     }
@@ -42,5 +48,20 @@ public class Candidate extends EmployeeWT {
 
     public void setManagerExternal(ManagerExternal managerExternal) {
         this.managerExternal = managerExternal;
+    }
+    
+    public List<HourRegistration> getHourLists() {
+		return hourLists;
+	}
+
+	public void setHourLists(List<HourRegistration> hourLists) {
+		this.hourLists = hourLists;
+	}
+
+	public void addDay(HourRegistration hourregistration) {
+        this.hourLists.add(hourregistration);
+        if (hourregistration.getCandidate() != this) {
+        	hourregistration.setCandidate(this);
+        }
     }
 }
