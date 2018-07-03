@@ -1,6 +1,5 @@
 package com.urenregistratie.urenWT.controller;
 
-import com.urenregistratie.urenWT.domain.EmployeeWT;
 import com.urenregistratie.urenWT.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +24,9 @@ public class UserService {
         return this.userRepository.existsById(id);
     }
 
-    public User save(EmployeeWT employee){
-        return userRepository.save(employee);
+    public User save(User user){
+
+        return userRepository.save(user);
     }
 
     public void deleteById(Long id) {

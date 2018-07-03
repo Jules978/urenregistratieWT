@@ -48,7 +48,6 @@ public class ManagerExternalEndpoint {
     }
 
     //  @EDIT
-
     //  @PUT
     @POST
     @Path("{id}")

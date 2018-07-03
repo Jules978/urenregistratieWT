@@ -1,14 +1,13 @@
 package com.urenregistratie.urenWT.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "ManagerExternal")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class ManagerExternal extends User {
 
-    @NotNull
+//    @NotNull
     @ManyToOne
     private Company company;
 
@@ -19,6 +18,5 @@ public class ManagerExternal extends User {
     public void setCompany(Company company) {
         this.company = company;
     }
-
 
 }
