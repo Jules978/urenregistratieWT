@@ -3,7 +3,9 @@ package com.urenregistratie.urenWT.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,7 +24,7 @@ public class Candidate extends EmployeeWT {
     //@NotNull
     @ManyToOne
     private ManagerExternal managerExternal;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "candidate", cascade = CascadeType.ALL)
     private List<HourRegistration> hourLists = new ArrayList();
     
     public double getSalary() {

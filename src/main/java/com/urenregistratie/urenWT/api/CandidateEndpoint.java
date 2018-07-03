@@ -34,6 +34,18 @@ public class CandidateEndpoint {
         System.out.println("Candidate id in GET not found!");
         return Response.status(Status.NOT_FOUND).build();
     }
+    
+    @GET
+    @Path("/naam/{lastname}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCandidateByLastname(@PathParam("lastname") String lastname){
+        if(this.candidateWTService.getPersonsInfoByLastName(lastname) != null) {
+            Candidate candidate = this.candidateWTService.getPersonsInfoByLastName(lastname);
+            return Response.ok(candidate).build();
+        }
+        System.out.println("Candidate lastname in GET not found!");
+        return Response.status(Status.NOT_FOUND).build();
+    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
