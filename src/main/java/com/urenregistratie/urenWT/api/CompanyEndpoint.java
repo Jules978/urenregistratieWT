@@ -19,8 +19,8 @@ public class CompanyEndpoint {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response showAll() {
-        Iterable<Company> company = this.companyWTService.giveAll();
-        return Response.ok(company).build();
+        Iterable<Company> companies = this.companyWTService.giveAll();
+        return Response.ok(companies).build();
     }
 
     @GET

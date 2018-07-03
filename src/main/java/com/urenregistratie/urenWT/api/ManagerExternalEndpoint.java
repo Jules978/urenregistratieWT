@@ -62,7 +62,7 @@ public class ManagerExternalEndpoint {
             manEdit.setTelephoneNumber(managerExternalEdit.getTelephoneNumber());
             manEdit.setPassword(managerExternalEdit.getPassword());
             manEdit.setDateOfBirth(managerExternalEdit.getDateOfBirth());
-//            manEdit.setCompany(managerExternalEdit.getCompany());
+            manEdit.setCompany(managerExternalEdit.getCompany());
 
             ManagerExternal result = this.managerExternalService.save(manEdit);
             return Response.accepted(result.getUserID()).build();

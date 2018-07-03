@@ -19,8 +19,8 @@ public class CandidateEndpoint {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response showAll() {
-        Iterable<Candidate> candidate = this.candidateWTService.giveAll();
-        return Response.ok(candidate).build();
+        Iterable<Candidate> candidates = this.candidateWTService.giveAll();
+        return Response.ok(candidates).build();
     }
 
     @GET
