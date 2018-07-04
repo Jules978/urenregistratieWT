@@ -14,12 +14,12 @@ import javax.ws.rs.core.Response.Status;
 @Component
 public class CandidateEndpoint {
     @Autowired
-    CandidateService candidateWTService;
+    CandidateService candidateService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response showAll() {
-        Iterable<Candidate> candidates = this.candidateWTService.giveAll();
+        Iterable<Candidate> candidates = this.candidateService.giveAll();
         return Response.ok(candidates).build();
     }
 
@@ -27,45 +27,45 @@ public class CandidateEndpoint {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCandidateById(@PathParam("id") Long id){
-        if(this.candidateWTService.existsById(id)) {
-            Candidate candidate = this.candidateWTService.findById(id);
+        if(this.candidateService.existsById(id)) {
+            Candidate candidate = this.candidateService.findById(id);
             return Response.ok(candidate).build();
         }
         System.out.println("Candidate id in GET not found!");
         return Response.status(Status.NOT_FOUND).build();
     }
     
-    @GET
-    @Path("/naam/{lastname}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getCandidateByLastname(@PathParam("lastname") String lastname){
-        if(this.candidateWTService.getPersonsInfoByLastName(lastname) != null) {
-            Candidate candidate = this.candidateWTService.getPersonsInfoByLastName(lastname);
-            return Response.ok(candidate).build();
-        }
-        System.out.println("Candidate lastname in GET not found!");
-        return Response.status(Status.NOT_FOUND).build();
-    }
+//    @GET
+//    @Path("/naam/{lastname}")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response getCandidateByLastname(@PathParam("lastname") String lastname){
+//        if(this.candidateWTService.getPersonsInfoByLastName(lastname) != null) {
+//            Candidate candidate = this.candidateWTService.getPersonsInfoByLastName(lastname);
+//            return Response.ok(candidate).build();
+//        }
+//        System.out.println("Candidate lastname in GET not found!");
+//        return Response.status(Status.NOT_FOUND).build();
+//    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Response postCandidate(Candidate candidate){
         if(candidate != null){
-            Candidate result = this.candidateWTService.save(candidate);
+            Candidate result = this.candidateService.save(candidate);
             return Response.accepted(result.getUserID()).build();
         }
         System.out.println("Candidate in POST is null!");
         return Response.status(Status.INTERNAL_SERVER_ERROR).build();
     }
 
-//    @PUT
+    //    @PUT
     @POST
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateCandidate(@PathParam("id") Long id, Candidate candidateEdit){
-        if(this.candidateWTService.existsById(id)) {
-            Candidate canEdit = this.candidateWTService.findById(id);
+        if(this.candidateService.existsById(id)) {
+            Candidate canEdit = this.candidateService.findById(id);
 
             canEdit.setFirstName(candidateEdit.getFirstName());
             canEdit.setLastName(candidateEdit.getLastName());
@@ -78,7 +78,7 @@ public class CandidateEndpoint {
             canEdit.setCompany(candidateEdit.getCompany());
             canEdit.setManagerExternal(candidateEdit.getManagerExternal());
 
-            Candidate result = this.candidateWTService.save(canEdit);
+            Candidate result = this.candidateService.save(canEdit);
             return Response.accepted(result.getUserID()).build();
         }
         System.out.println("Candidate id in PUT not found!");
@@ -88,8 +88,8 @@ public class CandidateEndpoint {
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
     public Response deleteCandidate(@QueryParam("id") Long id) {
-        if(this.candidateWTService.existsById(id)) {
-            this.candidateWTService.deleteById(id);
+        if(this.candidateService.existsById(id)) {
+            this.candidateService.deleteById(id);
             System.out.println("Deleted Candidate account with id: " + id);
             return Response.noContent().build();
         }
