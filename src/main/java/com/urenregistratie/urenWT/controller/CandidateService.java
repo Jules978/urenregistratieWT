@@ -32,4 +32,9 @@ public class CandidateService {
         this.candidateRepository.deleteById(id);
         return;
     }
+    
+    public Candidate getPersonsInfoByLastName(String lastname)
+    {
+    	return candidateRepository.getPersonInfoByLastName(lastname);
+    }
 }
