@@ -75,7 +75,7 @@ public class HourRegistration {
 //		this.approval = approval;
 //	}
 
-	public Date getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 

@@ -32,4 +32,9 @@ public class HourRegistrationService {
         this.hourRegistrationRepository.deleteById(id);
         return;
     }
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> master
