@@ -24,15 +24,16 @@ public class HourRegistrationEndpoint {
     @Produces(MediaType.APPLICATION_JSON)
     public Response showAllCandidateHourRegistration(@PathParam("id") Long id) {
         if(this.candidateService.existsById(id)) {
-            Long candidateID = this.candidateService.findById(id).getUserID();
-            Iterable<HourRegistration> hourRegistrationsIterable = this.hourRegistrationService.giveAll();
-            ArrayList<HourRegistration> hourRegistrations = new ArrayList();
-
-            for(HourRegistration hourRegistration : hourRegistrationsIterable){
-                if(hourRegistration.getCandidate().getUserID() == candidateID){
-                    hourRegistrations.add(hourRegistration);
-                }
-            }
+//            Long candidateID = this.candidateService.findById(id).getUserID();
+//            Iterable<HourRegistration> hourRegistrationsIterable = this.hourRegistrationService.giveAll();
+//            ArrayList<HourRegistration> hourRegistrations = new ArrayList();
+//
+//            for(HourRegistration hourRegistration : hourRegistrationsIterable){
+//                if(hourRegistration.getCandidate().getUserID() == candidateID){
+//                    hourRegistrations.add(hourRegistration);
+//                }
+//            }
+        	ArrayList<HourRegistration> hourRegistrations = this.hourRegistrationService.getAllCandidateHourRegs(id);
             return Response.ok(hourRegistrations).build();
         }
         System.out.println("Candidate id in GET hour registrations not found!");

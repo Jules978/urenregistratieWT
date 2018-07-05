@@ -17,14 +17,14 @@ public class Candidate extends EmployeeWT {
     //@NotNull
     private double salary;
     //@NotNull
-    private enum approvalCandidate {FIRST_APPROVED, FINAL_APPROVED}
+    //private enum approvalCandidate {FIRST_APPROVED, FINAL_APPROVED}
     //@NotNull
     @ManyToOne
     private Company company;
     //@NotNull
     @ManyToOne
     private ManagerExternal managerExternal;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "candidate", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "candidate", cascade = CascadeType.ALL)
     private List<HourRegistration> hourLists = new ArrayList();
     
     public double getSalary() {

@@ -1,6 +1,9 @@
 package com.urenregistratie.urenWT.controller;
 
 import com.urenregistratie.urenWT.domain.HourRegistration;
+
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,6 +34,11 @@ public class HourRegistrationService {
     public void deleteById(Long id) {
         this.hourRegistrationRepository.deleteById(id);
         return;
+    }
+    
+    public ArrayList<HourRegistration> getAllCandidateHourRegs(Long id)
+    {
+    	return this.hourRegistrationRepository.getAllCandidateHourRegs(id);
     }
 
 }
